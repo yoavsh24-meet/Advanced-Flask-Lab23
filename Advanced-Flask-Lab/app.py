@@ -11,6 +11,9 @@ app = Flask(  # Create a flask app
 # Variables for tasks
 image_link = "https://i.imgur.com/o9Znt5k.png"
 
+def image1():
+    return render_template("index.html",)
+
 user_bio = "Middle East Entrepreneurs of Tomorrow. Enabling the next generation of Israeli and Palestinian leaders."
 
 posts = {
@@ -25,7 +28,7 @@ posts = {
 
 @app.route('/')  # '/' for the default page
 def home():
-    return render_template('index.html')
+    return render_template('index.html', image_link=image_link)
 
 
 @app.route('/about')  # '/' for the default page
