@@ -9,7 +9,7 @@ app = Flask(  # Create a flask app
 )
 
 # Variables for tasks
-image_link = "https://i.imgur.com/o9Znt5k.png"
+image_link = "static/images/paris.jpg"
 
 def image1():
     return render_template("index.html",)
@@ -17,10 +17,10 @@ def image1():
 user_bio = "Middle East Entrepreneurs of Tomorrow. Enabling the next generation of Israeli and Palestinian leaders."
 
 posts = {
-    "https://i.imgur.com/1dSgGnG.png": "The cohort of 2022!",
-    "https://i.imgur.com/CPEvMk0.jpg": "MEET graduation!",
-    "https://i.imgur.com/Cb7LK9o.jpg": "#MEET_HACKATHON",
-    "https://i.imgur.com/S5A93Wt.jpg": "Class of 2024's Y1 closing event cohort"}
+    "https://imageio.forbes.com/blogs-images/samarmarwan/files/2018/03/MEET-Students-1200x800.jpg": "Group projects <3",
+    "https://uploads-ssl.webflow.com/5dd64bd3a930f96c82bd137a/63024ce64d943673cb004a4c_2022.07.17%20-%20Summer%20Day%201.png": "MEET summer!",
+    "https://uploads-ssl.webflow.com/5dd64bd3a930f9d04abd1363/5de6d502d6d70c0ad49a060c_6.jpg": "#MEET_DU",
+    "https://global-uploads.webflow.com/5fe28feebcae602620061802/5fe5401840671a36cd1d47d5_5de6d5024dd1a74670173aed_1-p-1080.jpeg": "Our lovely TAs!"}
 
 
 #####
@@ -28,7 +28,7 @@ posts = {
 
 @app.route('/')  # '/' for the default page
 def home():
-    return render_template('index.html', image_link=image_link)
+    return render_template('index.html', image_link=image_link, user_bio= user_bio, posts = posts)
 
 
 @app.route('/about')  # '/' for the default page
